@@ -17,7 +17,7 @@
     <entity name="Outlet" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="campaigns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Campaign" inverseName="outlets" inverseEntity="Campaign" syncable="YES"/>
-        <relationship name="partner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Partner" inverseName="outlets" inverseEntity="Partner" syncable="YES"/>
+        <relationship name="partner" maxCount="1" deletionRule="Nullify" destinationEntity="Partner" inverseName="outlets" inverseEntity="Partner" syncable="YES"/>
         <relationship name="photoReports" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PhotoReport" inverseName="outlet" inverseEntity="PhotoReport" syncable="YES"/>
         <relationship name="salesmans" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Salesman" inverseName="outlets" inverseEntity="Salesman" syncable="YES"/>
     </entity>
@@ -26,10 +26,10 @@
         <relationship name="outlets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Outlet" inverseName="partner" inverseEntity="Outlet" syncable="YES"/>
     </entity>
     <entity name="PhotoReport" syncable="YES">
-        <relationship name="campaign" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Campaign" inverseName="photoReports" inverseEntity="Campaign" syncable="YES"/>
-        <relationship name="outlet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Outlet" inverseName="photoReports" inverseEntity="Outlet" syncable="YES"/>
+        <relationship name="campaign" maxCount="1" deletionRule="Nullify" destinationEntity="Campaign" inverseName="photoReports" inverseEntity="Campaign" syncable="YES"/>
+        <relationship name="outlet" maxCount="1" deletionRule="Nullify" destinationEntity="Outlet" inverseName="photoReports" inverseEntity="Outlet" syncable="YES"/>
         <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Picture" inverseName="photoReport" inverseEntity="Picture" syncable="YES"/>
-        <relationship name="salesman" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Salesman" inverseName="photoreports" inverseEntity="Salesman" syncable="YES"/>
+        <relationship name="salesman" maxCount="1" deletionRule="Nullify" destinationEntity="Salesman" inverseName="photoreports" inverseEntity="Salesman" syncable="YES"/>
     </entity>
     <entity name="Picture" syncable="YES">
         <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="pictures" inverseEntity="Article" syncable="YES"/>
