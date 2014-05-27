@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Article" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="campaigns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Campaign" inverseName="articles" inverseEntity="Campaign" syncable="YES"/>
         <relationship name="pictures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Picture" inverseName="articles" inverseEntity="Picture" syncable="YES"/>
     </entity>
@@ -15,14 +15,14 @@
         <relationship name="pictures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Picture" inverseName="campaigns" inverseEntity="Picture" syncable="YES"/>
     </entity>
     <entity name="Outlet" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="campaigns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Campaign" inverseName="outlets" inverseEntity="Campaign" syncable="YES"/>
         <relationship name="partner" maxCount="1" deletionRule="Nullify" destinationEntity="Partner" inverseName="outlets" inverseEntity="Partner" syncable="YES"/>
         <relationship name="photoReports" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PhotoReport" inverseName="outlet" inverseEntity="PhotoReport" syncable="YES"/>
         <relationship name="salesmans" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Salesman" inverseName="outlets" inverseEntity="Salesman" syncable="YES"/>
     </entity>
     <entity name="Partner" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="outlets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Outlet" inverseName="partner" inverseEntity="Outlet" syncable="YES"/>
     </entity>
     <entity name="PhotoReport" syncable="YES">
@@ -32,12 +32,15 @@
         <relationship name="salesman" maxCount="1" deletionRule="Nullify" destinationEntity="Salesman" inverseName="photoreports" inverseEntity="Salesman" syncable="YES"/>
     </entity>
     <entity name="Picture" syncable="YES">
+        <attribute name="image" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="imageFormat" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="pictures" inverseEntity="Article" syncable="YES"/>
         <relationship name="campaigns" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Campaign" inverseName="pictures" inverseEntity="Campaign" syncable="YES"/>
         <relationship name="photoReport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PhotoReport" inverseName="photos" inverseEntity="PhotoReport" syncable="YES"/>
     </entity>
     <entity name="Salesman" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="outlets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Outlet" inverseName="salesmans" inverseEntity="Outlet" syncable="YES"/>
         <relationship name="photoreports" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PhotoReport" inverseName="salesman" inverseEntity="PhotoReport" syncable="YES"/>
     </entity>
@@ -45,7 +48,7 @@
         <element name="Campaign" positionX="-209" positionY="-270" width="128" height="148"/>
         <element name="Outlet" positionX="-441" positionY="-180" width="128" height="118"/>
         <element name="Article" positionX="36" positionY="-315" width="128" height="88"/>
-        <element name="Picture" positionX="54" positionY="-108" width="128" height="88"/>
+        <element name="Picture" positionX="54" positionY="-108" width="128" height="133"/>
         <element name="Salesman" positionX="-425" positionY="74" width="128" height="88"/>
         <element name="PhotoReport" positionX="-200" positionY="9" width="128" height="103"/>
         <element name="Partner" positionX="-432" positionY="-340" width="128" height="73"/>
