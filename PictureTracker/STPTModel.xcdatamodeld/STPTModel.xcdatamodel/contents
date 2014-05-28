@@ -3,9 +3,9 @@
     <entity name="Article" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="campaigns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Campaign" inverseName="articles" inverseEntity="Campaign" syncable="YES"/>
-        <relationship name="pictures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArticlePictures" inverseName="articles" inverseEntity="ArticlePictures" syncable="YES"/>
+        <relationship name="pictures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArticlePicture" inverseName="articles" inverseEntity="ArticlePicture" syncable="YES"/>
     </entity>
-    <entity name="ArticlePictures" parentEntity="Picture" syncable="YES">
+    <entity name="ArticlePicture" parentEntity="Picture" syncable="YES">
         <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="pictures" inverseEntity="Article" syncable="YES"/>
     </entity>
     <entity name="Campaign" syncable="YES">
@@ -15,9 +15,9 @@
         <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="campaigns" inverseEntity="Article" syncable="YES"/>
         <relationship name="outlets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Outlet" inverseName="campaigns" inverseEntity="Outlet" syncable="YES"/>
         <relationship name="photoReports" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PhotoReport" inverseName="campaign" inverseEntity="PhotoReport" syncable="YES"/>
-        <relationship name="pictures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CampaignPictures" inverseName="campaigns" inverseEntity="CampaignPictures" syncable="YES"/>
+        <relationship name="pictures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CampaignPicture" inverseName="campaigns" inverseEntity="CampaignPicture" syncable="YES"/>
     </entity>
-    <entity name="CampaignPictures" parentEntity="Picture" syncable="YES">
+    <entity name="CampaignPicture" parentEntity="Picture" syncable="YES">
         <relationship name="campaigns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Campaign" inverseName="pictures" inverseEntity="Campaign" syncable="YES"/>
     </entity>
     <entity name="Outlet" syncable="YES">
@@ -34,7 +34,7 @@
     <entity name="PhotoReport" syncable="YES">
         <relationship name="campaign" maxCount="1" deletionRule="Nullify" destinationEntity="Campaign" inverseName="photoReports" inverseEntity="Campaign" syncable="YES"/>
         <relationship name="outlet" maxCount="1" deletionRule="Nullify" destinationEntity="Outlet" inverseName="photoReports" inverseEntity="Outlet" syncable="YES"/>
-        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReportPhotos" inverseName="photoReport" inverseEntity="ReportPhotos" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReportPhoto" inverseName="photoReport" inverseEntity="ReportPhoto" syncable="YES"/>
         <relationship name="salesman" maxCount="1" deletionRule="Nullify" destinationEntity="Salesman" inverseName="photoreports" inverseEntity="Salesman" syncable="YES"/>
     </entity>
     <entity name="Picture" syncable="YES">
@@ -42,7 +42,7 @@
         <attribute name="imageFormat" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="ReportPhotos" parentEntity="Picture" syncable="YES">
+    <entity name="ReportPhoto" parentEntity="Picture" syncable="YES">
         <relationship name="photoReport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PhotoReport" inverseName="photos" inverseEntity="PhotoReport" syncable="YES"/>
     </entity>
     <entity name="Salesman" syncable="YES">
@@ -58,8 +58,8 @@
         <element name="PhotoReport" positionX="-200" positionY="9" width="128" height="103"/>
         <element name="Picture" positionX="124" positionY="-25" width="128" height="88"/>
         <element name="Salesman" positionX="-425" positionY="74" width="128" height="88"/>
-        <element name="ArticlePictures" positionX="187" positionY="-198" width="128" height="58"/>
-        <element name="CampaignPictures" positionX="-0" positionY="-126" width="128" height="58"/>
-        <element name="ReportPhotos" positionX="52" positionY="140" width="128" height="58"/>
+        <element name="ArticlePicture" positionX="187" positionY="-198" width="128" height="58"/>
+        <element name="CampaignPicture" positionX="-0" positionY="-126" width="128" height="58"/>
+        <element name="ReportPhoto" positionX="52" positionY="140" width="128" height="58"/>
     </elements>
 </model>
